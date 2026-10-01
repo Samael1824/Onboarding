@@ -345,3 +345,49 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
   font-size: 0.82rem;
   color: var(--color-text-muted);
 }
+
+.checklist-group {
+  margin-top: var(--space-4);
+}
+.checklist-group-title {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-3);
+}
+.checklist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.checklist-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+.checklist-item p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+.checklist-item-mark {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-primary);
+  border-radius: 4px;
+  background: var(--color-surface);
+}
+.checklist-reasons {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}

@@ -13,6 +13,16 @@ export const companyTypeOptions = [
   { value: "OTHER", label: "Otro" },
 ];
 
+/** Países extra para constitución (no necesariamente países de onboarding). */
+export const extraIncorporationCountryOptions = [
+  { value: "US", label: "Estados Unidos" },
+  { value: "MX", label: "México" },
+  { value: "GT", label: "Guatemala" },
+  { value: "CR", label: "Costa Rica" },
+  { value: "CO", label: "Colombia" },
+  { value: "ES", label: "España" },
+];
+
 export const identificationTypeOptions = [
   { value: "RUC", label: "RUC" },
   { value: "NIT", label: "NIT" },

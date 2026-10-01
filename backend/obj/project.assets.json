@@ -3278,7 +3278,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carlo\\.nuget\\packages\\": {}
+    "C:\\Users\\carlo\\AppData\\Local\\Temp\\cursor-sandbox-cache\\f328ebcb6ac0215c57548614129350f3\\nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3286,7 +3286,7 @@
       "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\onboarding-v2\\backend\\Onboarding.Api.csproj",
       "projectName": "Onboarding.Api",
       "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\onboarding-v2\\backend\\Onboarding.Api.csproj",
-      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\carlo\\AppData\\Local\\Temp\\cursor-sandbox-cache\\f328ebcb6ac0215c57548614129350f3\\nuget",
       "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\onboarding-v2\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [

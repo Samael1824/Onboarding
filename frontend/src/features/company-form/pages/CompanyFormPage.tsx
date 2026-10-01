@@ -23,7 +23,10 @@ import {
   sourceOfFundsOptions,
   industrySectorOptions,
   legalRepresentativeIdOptions,
+  extraIncorporationCountryOptions,
 } from "../constants/formOptions";
+import { generateDocumentChecklist } from "../documentChecklist";
+import { DocumentChecklistSection } from "../components/DocumentChecklistSection";
 import { supportedCountries } from "@/shared/validation/countryRules";
 import type { ApiError } from "@/shared/services/httpClient";
 
@@ -34,9 +37,13 @@ const SECTIONS = [
   { id: "activity", index: 4, title: "Actividad económica" },
   { id: "financial", index: 5, title: "Información financiera" },
   { id: "representative", index: 6, title: "Representante legal" },
+  { id: "documents", index: 7, title: "Documentos requeridos" },
 ] as const;
 
-const countryOptions = supportedCountries.map((c) => ({ value: c.code, label: c.name }));
+const countryOptions = mergeCountryOptions(
+  supportedCountries.map((c) => ({ value: c.code, label: c.name })),
+  extraIncorporationCountryOptions
+);
 
 export function CompanyFormPage() {
   const { applicationId } = useParams<{ applicationId: string }>();
@@ -52,11 +59,14 @@ export function CompanyFormPage() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<CompanyFormValues>({
     resolver: zodResolver(companyFormSchema),
     defaultValues: companyFormDefaults,
   });
+
+  const checklistItems = generateDocumentChecklist(watch());
 
   // Prefill: carga de datos existentes al entrar a la página. Side effect
   // legítimo (sincronización con el servidor al montar).
@@ -238,6 +248,8 @@ export function CompanyFormPage() {
           </div>
         </section>
 
+        <DocumentChecklistSection items={checklistItems} />
+
         <div className="form-actions-bar">
           <span className="save-status">
             {saveError
@@ -261,4 +273,12 @@ function sanitizeForForm(data: Record<string, unknown>): Record<string, unknown>
   return Object.fromEntries(
     Object.entries(data).map(([key, value]) => [key, value === null ? "" : value])
   );
+}
+
+function mergeCountryOptions(
+  primary: { value: string; label: string }[],
+  extra: { value: string; label: string }[]
+): { value: string; label: string }[] {
+  const seen = new Set(primary.map((c) => c.value));
+  return [...primary, ...extra.filter((c) => !seen.has(c.value))];
 }

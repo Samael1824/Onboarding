@@ -136,3 +136,4 @@ C:\Users\carlo\OneDrive\Escritorio\onboarding-v2\backend\obj\Debug\net8.0\refint
 C:\Users\carlo\OneDrive\Escritorio\onboarding-v2\backend\obj\Debug\net8.0\Onboarding.Api.pdb
 C:\Users\carlo\OneDrive\Escritorio\onboarding-v2\backend\obj\Debug\net8.0\Onboarding.Api.genruntimeconfig.cache
 C:\Users\carlo\OneDrive\Escritorio\onboarding-v2\backend\obj\Debug\net8.0\ref\Onboarding.Api.dll
+C:\Users\carlo\OneDrive\Escritorio\onboarding-v2\backend\obj\Debug\net8.0\Onboarding.Api.sourcelink.json
